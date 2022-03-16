@@ -8,7 +8,13 @@
         </span>
         <span> اليوم !</span>
       </h1>
-      <p></p>
+      <p>
+        <q-icon name="arrow_downward" />
+        <!-- <font-awesome-icon
+          class="pagination-icon"
+          :icon="['fab', 'linkedin-in']"
+        /> -->
+      </p>
     </div>
   </div>
 </template>
@@ -53,6 +59,31 @@ export default {};
         font-weight: 900;
       }
     }
+    > p {
+      padding-top: 50px;
+      > i {
+        font-size: 50px;
+        font-weight: bold;
+        animation-name: example;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+      }
+    }
+  }
+}
+@keyframes example {
+  0% {
+    top: 0px;
+  }
+  // 25% {top: 20px;}
+  50% {
+    top: 60px;
+  }
+  // 75% {top: 20px;}
+
+  100% {
+    top: 0px;
   }
 }
 </style>

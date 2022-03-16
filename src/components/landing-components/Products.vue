@@ -7,25 +7,29 @@
           <p>{{ block.productOne.content }}</p>
         </div>
         <div class="product-img">
-          <div class="bg-one"></div>
-          <div class="bg-two"></div>
-          <div class="bg-img">
-            <img
-              :src="require(`../../assets/imgs/${block.productOne.img}`)"
-              alt=""
-            />
+          <div class="bg-one">
+            <div class="bg-two">
+              <div class="bg-img">
+                <img
+                  :src="require(`../../assets/imgs/${block.productOne.img}`)"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="type-two item">
+      <div class="type-two item container">
         <div class="product-img">
-          <div class="bg-one"></div>
-          <div class="bg-two"></div>
-          <div class="bg-img">
-            <img
-              :src="require(`../../assets/imgs/${block.productTwo.img}`)"
-              alt=""
-            />
+          <div class="bg-one">
+            <div class="bg-two">
+              <div class="bg-img">
+                <img
+                  :src="require(`../../assets/imgs/${block.productTwo.img}`)"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div class="content">
@@ -51,7 +55,7 @@ export default {
         productTwo: {
           header: "زيت فريزيا هيشرفك",
           content:
-            "إقضى على تساقط الشعر بزيت فريزيا بخير الطبيعة من مجموعة الزيوت النادرة لوقف تساقط الشعر و علاج الفراغات و التنعيم و إطالة اللشعر فى وقت قصير",
+            "إقضى على تساقط الشعر بزيت فريزيا بخير الطبيعة من مجموعة الزيوت النادرة لوقف تساقط الشعر و علاج الفراغات و التنعيم و إطالة الشعر فى وقت قصير",
           img: "freesia.jpg",
         },
       },
@@ -66,75 +70,104 @@ export default {
 
 <style lang="scss">
 .products {
-  direction: rtl;
-  padding: 100px 0 70px 0;
+    background-image: linear-gradient(to bottom, #eaf3d4, #e9e4e4);
+      direction: rtl;
+  padding-top: 100px ;
+  @media (max-width: 567px) {
+      padding: 0;
+    }
   .block-holder {
+    @media (min-width: 1199px) {
+      display: flex;
+    }
     .type-one {
-      margin-bottom: 180px;
+      // margin-bottom: 180px;
       .product-img {
         .bg-one {
-          //   margin: 102px auto 0 -20px;
-          left: 15%;
-          top: 8%;
-          width: 90%;
+          width: 100%;
           height: 100%;
-        }
-        .bg-two {
-          //   margin-top: -468px;
-          //   margin-right: -40px;
-          left: 10%;
-          top: 15%;
-          width: 80%;
-          height: 80%;
-        }
-        .bg-img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .bg-two {
+            width: 95%;
+            height: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .bg-img {
+              width: 95%;
+              height: 95%;
+            }
+          }
         }
       }
-      @media (max-width: 600px) {
-        left: -8%;
-      }
+    
     }
     .type-two {
+        @media (max-width: 576px) { 
+            flex-direction: column-reverse !important;
+      }
       .product-img {
         .bg-one {
-          //   margin: 102px auto 0 -20px;
-          left: 3%;
-          top: 20%;
-          width: 80%;
-          height: 70%;
-          z-index: 9;
-        }
-        .bg-two {
-          //   margin-top: -468px;
-          //   margin-right: -40px;
-          right: 3%;
-          top: -13%;
-          height: 98%;
-          width: 80%;
-        }
-        .bg-img {
-          right: 50px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .bg-two {
+            width: 95%;
+            height: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .bg-img {
+              width: 95%;
+              height: 95%;
+            }
+          }
         }
       }
     }
     .item {
       display: flex;
       position: relative;
+      padding: 10px 0;
+      @media (min-width: 1199px) {
+        padding: 5px;
+      }
 
       .content {
         width: 50%;
         padding: 10px 30px;
+         @media (max-width: 576px) { 
+            text-align: center;
+          }
+           @media (min-width: 1199px) { 
+            text-align: center;
+          }
         > h3 {
           will-change: transform, opacity;
           animation-duration: 1000ms;
           line-height: 46.8px;
           font-weight: 700;
+                      color: #73722b;
+
         }
         > p {
           padding-top: 20px;
           font-weight: 300;
           font-size: 25px;
           line-height: 1.2;
+                      color: #73722b;
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+            font-size: 36px;
+            line-height: 1.5;
+          }
+         
         }
       }
       .product-img {
@@ -143,11 +176,9 @@ export default {
         position: relative;
         .bg-one {
           background-color: $secondary;
-          position: absolute;
         }
         .bg-two {
           background-color: $accent;
-          position: absolute;
         }
         .bg-img {
           width: 80%;
@@ -156,6 +187,7 @@ export default {
           img {
             display: block;
             width: 100%;
+            height: 100%;
             box-shadow: 2px 2px 40px 0 rgb(26 26 26 / 40%);
           }
         }
@@ -171,6 +203,7 @@ export default {
         }
       }
     }
+
   }
 }
 </style>

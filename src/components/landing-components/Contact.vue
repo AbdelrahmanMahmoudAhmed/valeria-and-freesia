@@ -89,6 +89,7 @@ export default {
 
 <style lang="scss">
 .contact {
+    background-image: linear-gradient(to bottom, #e9e4e4 ,#eaf3d4 );
   direction: rtl;
   height: 100vh;
   position: relative;
@@ -106,6 +107,7 @@ export default {
   }
 
   .content-form {
+    background-color: #f1f1f1;
     .telephone {
       direction: ltr;
       text-align: right;
@@ -129,7 +131,6 @@ export default {
     flex-direction: column;
     justify-content: space-evenly;
     box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 40%);
-    background-color: #fff;
     // margin: 50px auto;
     padding: 20px;
     text-align: center;
